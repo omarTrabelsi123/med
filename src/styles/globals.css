@@ -1,27 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+   body {
+     background-color: #F3F2F9;
+     font-family: 'Outfit', sans-serif;
+     color:#080341;
+    }
+
+    .btn {
+      @apply  text-white rounded-full  border border-[#EAEAEF] bg-[#080341] hover:bg-[#058ED9] hover:border-[#69BBE8] font-semibold  ;
+    }
+    .contact-btn{
+      @apply text-[#211C54] rounded-full w-full border border-[#EAEAEF]  font-semibold hover:text-[#058ED9] hover:bg-[#E6F4FB] hover:border-[#69BBE8]  text-base py-2 flex flex-row justify-center gap-2 items-center;
+    }
+    .act-btn{
+      @apply bg-[#058ED9] font-bold cursor-default text-white rounded-full  w-[86px] h-[25px] p-1 text-xs hover:bg-[#37A5E1]  mr-3;
+    }
+.card{
+  @apply flex   flex-col  w-full gap-4 bg-white p-5 border rounded-xl shadow-md
+}
+.frame{
+  @apply flex relative flex-col  w-full  bg-white  border rounded-xl shadow-md
+}
+.payment-card{
+  @apply rounded-[10px] bg-[#F0F4F8] border-2 border-[#F0F4F8] hover:border-[#69BBE8] h-[120px] w-full hover:text-[#69BBE8] flex flex-col items-center justify-center gap-3
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.slider-example-split-line {
+  --divider-width: 0;
+  --divider-color:white;
+  --default-handle-opacity: 0;
+outline: 0;
 }
