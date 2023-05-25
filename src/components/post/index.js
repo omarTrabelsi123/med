@@ -53,8 +53,8 @@ export default function BasicTabs() {
 
 
   return (
-
-    <Box sx={{ maxWidth: '50%' }}>
+    <div className='w-6/12 grow max-md:w-full'>
+       <Box sx={{ maxWidth: '100%' }}>
       <Box sx={{ borderBottom: 0, borderColor: 'divider' }}>
         <Tabs
           value={value}
@@ -62,7 +62,8 @@ export default function BasicTabs() {
           textColor="secondary"
           indicatorColor="secondary"
           aria-label="secondary tabs example"
-
+          variant="scrollable"
+          
         >
           <Tab className='font-semibold text-[#8E8EA9]' value={0} label="Journal" {...a11yProps(0)} />
           <Tab className='font-semibold text-[#8E8EA9]' value={1} label="Titres et experiences" {...a11yProps(1)} />
@@ -92,7 +93,7 @@ export default function BasicTabs() {
         <Resau />
       </TabPanel>
     </Box>
-
+    </div>
 
   );
 }

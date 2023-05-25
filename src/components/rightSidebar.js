@@ -2,7 +2,8 @@ import React from 'react'
 
 function RightSidebar() {
     return (
-        <div className=' w-[320px] flex flex-col gap-[38px]'>
+       <div className='max-md:hidden' >
+         <div className='flex flex-col gap-[38px]'>
             <button className='btn h-[40px] w-full'>Make an appointment</button>
             <div className=' flex flex-col items-start card'>
                 <h1 className='text-[#080341] text-2xl font-bold '>Principaux Actes</h1>
@@ -39,6 +40,7 @@ function RightSidebar() {
                 
             </div>
         </div>
+       </div>
 
     )
 }

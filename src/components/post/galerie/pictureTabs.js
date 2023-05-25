@@ -83,6 +83,7 @@ export default function BasicTabs() {
                     textColor="white"
                     indicatorColor="none"
                     aria-label="secondary tabs example"
+                    variant="scrollable"
                     sx={{
                         display: 'flex',
                         justifyContent: 'space-between',

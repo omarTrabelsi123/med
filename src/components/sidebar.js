@@ -18,8 +18,8 @@ function Sidebar() {
     const scrollMode = scrollTop > 500;
 
     return (
-        
-            <div className='static w-[250px] '>
+        <div>
+            <div className='max-md:hidden w-[250px] static'>
                 <div className={`w-[250px] ${scrollMode ? " fixed z-20 top-[100px]" : " z-20  absolute top-[350px]"}`}>
                     <div className="card  items-center">
                         <img
@@ -91,8 +91,37 @@ function Sidebar() {
                     </div>
                 </div>
             </div>
-           
-    
+
+            <div className='md:hidden'>
+                <div className='static flex justify-center'>
+                    <img
+                        className="w-[170px] absolute top-[160px]"
+                        src="https://res.cloudinary.com/dfwxzwkiw/image/upload/v1684739906/Ellipse_50_fnzf9n.svg"
+                        alt="BarImage "
+                    />
+                </div>
+                <div  className='bg-white text-center flex flex-col gap-3 p-3 '>
+                    <div className=" pt-[100px] flex flex-row justify-center gap-2 items-center">
+                        <h1 className="text-2xl font-bold text-[#080341]">
+                            Jaden White
+                        </h1>
+                        <img className='w-6' src="https://res.cloudinary.com/dfwxzwkiw/image/upload/v1684740258/united-states-of-america_xbihuy.svg" alt="usaflag" />
+                    </div>
+                    <p className="  text-sm text-[#8E8EA9]">Chirurgien orthopédiste</p>
+                    <p className="text-sm text-[#8E8EA9]">Los Angeles, California - USA</p>
+                    <p className="text-sm text-[#8E8EA9]">Baker Street, ou983 Baker Street, ou983</p>
+                    <button className='btn w-full h-[40px] flex justify-center items-center gap-[10px]'>
+                        <img className='w-[16px] h-[16px]' src="https://res.cloudinary.com/dfwxzwkiw/image/upload/v1684742407/user-plus_senckx.svg" alt="logo" />
+                        Follow user
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
 
     )
 }
