@@ -9,8 +9,8 @@ function Navbar() {
     
     return (
         <>
-        <div className='h-[62px] relative'>
-        <div className='h-[62px] w-full z-[9000] fixed bg-white flex items-center justify-center'>
+        <div className='h-[62px] relative max-md:hidden'>
+        <div className='h-[62px] w-full z-[100] fixed bg-white flex items-center justify-center'>
                 <div>
                     <svg width="184" height="34" viewBox="0 0 184 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_1_5919)">

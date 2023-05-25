@@ -53,9 +53,9 @@ export default function BasicTabs() {
 
 
   return (
-    
-    <Box sx={{ width: '50%' }}>
-      <Box sx={{ borderBottom: 0, borderColor: 'divider' }}>
+   
+     <Box  sx={{maxWidth:'50%'}}>
+      <Box sx={{ borderBottom: 0, borderColor: 'divider'}}>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -92,6 +92,7 @@ export default function BasicTabs() {
       <Resau/>
       </TabPanel>
     </Box>
+ 
  
   );
 }
