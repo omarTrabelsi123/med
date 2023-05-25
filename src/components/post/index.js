@@ -53,46 +53,46 @@ export default function BasicTabs() {
 
 
   return (
-   
-     <Box  sx={{maxWidth:'50%'}}>
-      <Box sx={{ borderBottom: 0, borderColor: 'divider'}}>
+
+    <Box sx={{ maxWidth: '50%' }}>
+      <Box sx={{ borderBottom: 0, borderColor: 'divider' }}>
         <Tabs
           value={value}
           onChange={handleChange}
           textColor="secondary"
           indicatorColor="secondary"
           aria-label="secondary tabs example"
-       
+
         >
           <Tab className='font-semibold text-[#8E8EA9]' value={0} label="Journal" {...a11yProps(0)} />
-          <Tab className='font-semibold text-[#8E8EA9]'value={1} label="Titres et experiences" {...a11yProps(1)} />
-          <Tab className='font-semibold text-[#8E8EA9]'value={2} label="Actes" {...a11yProps(2)} />
+          <Tab className='font-semibold text-[#8E8EA9]' value={1} label="Titres et experiences" {...a11yProps(1)} />
+          <Tab className='font-semibold text-[#8E8EA9]' value={2} label="Actes" {...a11yProps(2)} />
           <Tab className='font-semibold text-[#8E8EA9]' value={3} label="Galerie" {...a11yProps(3)} />
-          <Tab className='font-semibold text-[#8E8EA9]'value={4} label="Infos Pratique" {...a11yProps(4)} />
-          <Tab className='font-semibold text-[#8E8EA9]'value={5} label="Réseau" {...a11yProps(5)} />
+          <Tab className='font-semibold text-[#8E8EA9]' value={4} label="Infos Pratique" {...a11yProps(4)} />
+          <Tab className='font-semibold text-[#8E8EA9]' value={5} label="Réseau" {...a11yProps(5)} />
 
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <Journal/>
+        <Journal />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Experiences/>
+        <Experiences />
       </TabPanel>
       <TabPanel value={value} index={2}>
-       <Acts/>
+        <Acts />
       </TabPanel>
       <TabPanel value={value} index={3}>
-       <Galerie/>
+        <Galerie />
       </TabPanel>
       <TabPanel value={value} index={4}>
-        <Infos/>
+        <Infos />
       </TabPanel>
       <TabPanel value={value} index={5}>
-      <Resau/>
+        <Resau />
       </TabPanel>
     </Box>
- 
- 
+
+
   );
 }
