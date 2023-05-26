@@ -37,3 +37,74 @@
 outline: 0;
 
 }
+
+
+.search-box {
+  width:0;
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  transition: width 0.6s ease-in-out;
+  background-color: #080341;
+  opacity: 0;
+ 
+}
+.search-box.active {
+  opacity: 1;
+}
+
+.search-box:focus {
+  width: 100%;
+}
+
+
+.search-icon:hover {
+  fill: #0056b3;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: 400px;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    width: 400px;
+  }
+  to {
+    opacity: 0;
+    width: 0;
+  }
+}
+@media (max-width: 480px) {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      width: 0;
+    }
+    to {
+      opacity: 1;
+      width: 100px;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      width: 100px;
+    }
+    to {
+      opacity: 0;
+      width: 0;
+    }
+  }
+}

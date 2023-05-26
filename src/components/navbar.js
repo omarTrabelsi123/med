@@ -1,18 +1,22 @@
 import React from 'react'
-import { FiSearch } from "react-icons/fi";
+
 import { useState } from 'react';
 
 
 
 function Navbar() {
     const [open, setOpen] = useState(false);
+    const [showSearchBox, setShowSearchBox] = useState(false);
 
+    const toggleSearchBox = () => {
+        setShowSearchBox(!showSearchBox);
+    };
     return (
         <>
-            <div className='h-[62px] relative max-md:hidden bg-white '>
-                <div className='h-[62px] w-11/12 z-[100] fixed bg-white flex items-center justify-between '>
+            <div className='h-[62px] relative'>
+                <div className='h-[62px] w-full z-[100] px-12  max-md:p-0 fixed bg-white flex items-center justify-between '>
                     <div className='flex'>
-                        <svg width="184" height="34" viewBox="0 0 184 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg className='w-[184px] h-[34px] max-md:w-[100px]' viewBox="0 0 184 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_1_5919)">
                                 <path d="M48.6583 14.8445V26.5721H45.858V14.8445C45.858 12.7017 46.4298 11.0672 47.5735 9.94089C48.7172 8.8146 50.1957 8.25145 52.0091 8.25145C54.4625 8.25145 56.1834 9.24047 57.1718 11.2185H57.228C57.6621 10.2933 58.3723 9.52547 59.261 9.02084C60.219 8.49321 61.2993 8.22781 62.3928 8.25145C64.2235 8.25145 65.7067 8.8146 66.8424 9.94089C67.9781 11.0672 68.5459 12.7017 68.5459 14.8445V26.5721H65.7415V14.8445C65.7415 13.5267 65.4168 12.5283 64.7672 11.8493C64.1177 11.1703 63.2526 10.8355 62.1718 10.8449C61.6932 10.8263 61.2161 10.9082 60.7711 11.0854C60.3262 11.2625 59.9233 11.531 59.5884 11.8734C58.9295 12.5604 58.6001 13.5541 58.6001 14.8545V26.5821H55.7998V14.8445C55.7998 13.5441 55.475 12.5504 54.8255 11.8633C54.1759 11.1763 53.3108 10.8335 52.23 10.8348C51.1694 10.8348 50.3089 11.1696 49.6487 11.8392C48.9884 12.5089 48.6583 13.5106 48.6583 14.8445Z" fill="#1C1C3A" />
                                 <path d="M85.3237 20.7484H73.5238V20.8047C73.6801 21.8603 74.2175 22.8221 75.0345 23.5086C75.838 24.1782 76.8545 24.513 78.0839 24.513C79.8423 24.513 81.1052 23.9365 81.8726 22.7834H84.7573C84.2462 24.0426 83.3469 25.1059 82.19 25.8188C80.9557 26.5742 79.5307 26.9598 78.0839 26.9296C75.9411 26.9296 74.1874 26.26 72.8227 24.9208C71.458 23.5816 70.773 21.8707 70.7677 19.7882C70.7677 17.7191 71.4493 16.0116 72.8127 14.6657C74.176 13.3198 75.9297 12.6468 78.0738 12.6468C80.1979 12.6468 81.9388 13.3198 83.2968 14.6657C84.6548 16.0116 85.3325 17.7191 85.3298 19.7882L85.3237 20.7484ZM80.9847 15.9554C80.138 15.3477 79.1155 15.0344 78.0738 15.0634C77.0357 15.0332 76.0167 15.3468 75.1751 15.9554C74.3821 16.5486 73.8232 17.402 73.5961 18.366V18.4142H82.5777V18.3599C82.3484 17.3949 81.7839 16.5427 80.9847 15.9554Z" fill="#1C1C3A" />
@@ -35,27 +39,45 @@ function Navbar() {
                             </defs>
                         </svg>
                         <div className="flex flex-row gap-2 items-center ml-5  hover:text-[#058ED9] hover:mb-0.5  hover:font-bold cursor-pointer max-sm:hidden ">
-                        <svg
-                            width="13"
-                            height="14"
-                            viewBox="0 0 13 14"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="hover:fill-[#CDE8F7]"
-                        >
-                            <path
-                                d="M4.625 13.25V7H8.375V13.25M0.875 5.125L6.5 0.75L12.125 5.125V12C12.125 12.3315 11.9933 12.6495 11.7589 12.8839C11.5245 13.1183 11.2065 13.25 10.875 13.25H2.125C1.79348 13.25 1.47554 13.1183 1.24112 12.8839C1.0067 12.6495 0.875 12.3315 0.875 12V5.125Z"
-                                stroke="#080341"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                        </svg>
-                        <span className="font-semibold text-[14px]">Home</span>
-                    </div>
+                            <svg
+                                width="13"
+                                height="14"
+                                viewBox="0 0 13 14"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="hover:fill-[#CDE8F7]"
+                            >
+                                <path
+                                    d="M4.625 13.25V7H8.375V13.25M0.875 5.125L6.5 0.75L12.125 5.125V12C12.125 12.3315 11.9933 12.6495 11.7589 12.8839C11.5245 13.1183 11.2065 13.25 10.875 13.25H2.125C1.79348 13.25 1.47554 13.1183 1.24112 12.8839C1.0067 12.6495 0.875 12.3315 0.875 12V5.125Z"
+                                    stroke="#080341"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
+                            </svg>
+                            <span className="font-semibold text-[14px] max-md:text-xs">Home</span>
+                        </div>
                     </div>
                     <div className='flex gap-2'>
-                    
-                    <div className='  bg-slate-100 rounded-full w-fit flex p-2.5 gap-2 '>
+
+                        <div className='w-10 h-10 rounded-full bg-gradient-to-r from-[#058ED9] to-[#080341] ' onClick={toggleSearchBox}>
+                            <svg className={`p-3 hover:cursor-pointer ${showSearchBox ? 'active' : ''}`} onClick={toggleSearchBox} clviewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.375 14.375L11.2938 11.2937M12.9583 7.29167C12.9583 10.4213 10.4213 12.9583 7.29167 12.9583C4.16205 12.9583 1.625 10.4213 1.625 7.29167C1.625 4.16205 4.16205 1.625 7.29167 1.625C10.4213 1.625 12.9583 4.16205 12.9583 7.29167Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+
+                        <div className='flex-1'>
+                            {showSearchBox && (
+                                <input type="text" className={`search-box text-white ${showSearchBox ? 'active' : ''}`} placeholder="Search"
+                                    style={{
+                                        animationName: showSearchBox ? 'fadeIn' : 'fadeOut',
+                                        animationDuration: '0.3s',
+                                        animationTimingFunction: 'ease-in-out',
+                                        animationFillMode: 'forwards'
+                                    }}
+                                />
+                            )}
+                        </div>
+                        {/* <div className='  bg-slate-100 rounded-full w-fit flex p-2.5 gap-2 '>
                         <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14.375 14.375L11.2938 11.2937M12.9583 7.29167C12.9583 10.4213 10.4213 12.9583 7.29167 12.9583C4.16205 12.9583 1.625 10.4213 1.625 7.29167C1.625 4.16205 4.16205 1.625 7.29167 1.625C10.4213 1.625 12.9583 4.16205 12.9583 7.29167Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
@@ -65,39 +87,46 @@ function Navbar() {
                             type="text"
                             placeholder="Search"
                         />
-                    </div>
-                    <div>
-                        <button
-                            type="button"
-                            className="flex items-center px-4 py-2 text-gray-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:shadow-outline"
-                            onClick={() => setOpen(!open)}
-                        >
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_4_690)">
-                                    <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M3.6001 9H20.4001" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M3.6001 15H20.4001" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M11.5002 3C9.8155 5.69961 8.92236 8.81787 8.92236 12C8.92236 15.1821 9.8155 18.3004 11.5002 21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M12.5 3C14.1847 5.69961 15.0778 8.81787 15.0778 12C15.0778 15.1821 14.1847 18.3004 12.5 21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_4_690">
-                                        <rect width="24" height="24" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                        </button>
-                        {open && (
-                            <div className="absolute z-10 w-28 mt-2 bg-white rounded-md shadow-lg">
-                                <ul>
-                                    <li>français</li>
-                                    <li>english</li>
-                                </ul>
+                    </div> */}
+                        <div>
+                            <button
+                                type="button"
+                                className="flex items-center px-4 py-2 text-gray-700 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:shadow-outline"
+                                onClick={() => setOpen(!open)}
+                            >
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_4_690)">
+                                        <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M3.6001 9H20.4001" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M3.6001 15H20.4001" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M11.5002 3C9.8155 5.69961 8.92236 8.81787 8.92236 12C8.92236 15.1821 9.8155 18.3004 11.5002 21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M12.5 3C14.1847 5.69961 15.0778 8.81787 15.0778 12C15.0778 15.1821 14.1847 18.3004 12.5 21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_4_690">
+                                            <rect width="24" height="24" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                            {open && (
+                                <div className="absolute z-10 w-32 mt-3 p-2 -ml-12 bg-white rounded-md shadow-lg">
+                                    <ul>
+                                        <li className='flex gap-4'>
+                                            <p>français</p>
+                                            <svg className='w-6' xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 356.18"><path fill="#E1000F" d="M345.04 0h139C499.44.1 512 12.72 512 28.13v299.91c0 15.47-12.65 28.13-28.13 28.14H345.04V0zM15.11 352.95zm-9.54-8.15z"/><path fill="#fff" d="M27.96 0h317.08v356.18H27.98C12.57 356.09 0 343.46 0 328.04V28.14C0 12.72 12.56.1 27.96 0z"/><path fill="#273375" d="M27.96 0h138.99v356.18H28c-15.42-.08-28-12.71-28-28.14V28.14C0 12.72 12.56.1 27.96 0z"/></svg>
+                                        </li>
+                                        <li className='flex gap-6'>
+                                            <p>english</p>
+                                            <img className='w-6' src="https://res.cloudinary.com/dfwxzwkiw/image/upload/v1684740258/united-states-of-america_xbihuy.svg" alt="usaflag" />
+
+                                            </li>
+                                    </ul>
 
 
-                            </div>
-                        )}
-                    </div>
+                                </div>
+                            )}
+                        </div>
                     </div>
 
                 </div>
